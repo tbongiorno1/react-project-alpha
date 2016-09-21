@@ -1,0 +1,31 @@
+{
+  "name": "react-project-alpha",
+  "version": "1.0.0",
+  "description": "Cmprtmntz - this app will walk the user through the decision making process to compartmentalize an aspect(or eventually multiple) of their life and come to a decision. they will input all information via prompted questions. All with a Spartan discipline theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbongiorno1/react-project-alpha.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbongiorno1/react-project-alpha/issues"
+  },
+  "homepage": "https://github.com/tbongiorno1/react-project-alpha#readme",
+  "dependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "firebase": "^3.4.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "superagent": "^2.3.0",
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^1.16.1"
+  }
+}
