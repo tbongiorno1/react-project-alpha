@@ -1,10 +1,10 @@
 # React Project Alpha
 
-READR
+SPRTN
 
 ## Project MVP
 
-Rendering one clickable book.
+Rendering one clickable book that leads to a book-view component
 
 ## Technologies
 
@@ -16,4 +16,4 @@ No coding until the project is fully mapped with a full component tree and visua
 
 ## Bonuses
 
-grab snippets of the book or preview
+grab snippets of the book or preview of the first chapter
