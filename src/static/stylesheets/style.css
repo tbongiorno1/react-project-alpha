@@ -1,8 +1,8 @@
 #navBar {
   width: 100%;
   height: 40px;
-  border-bottom: solid #2980b9 1px;
-  color: #2980b9;
+  border-bottom: solid #34495e 1px;
+  color: #34495e;
   position: fixed;
   display: inline;
 }
@@ -10,7 +10,7 @@
 #logo {
   font-family: 'Lobster', cursive;
   font-size: 30px;
-  padding-left: 10rem;
+  padding-left: 2rem;
   padding-right: .5rem;
   display: inline;
 }
@@ -18,15 +18,15 @@
 #signature {
   font-family: 'Lobster', cursive;
   font-size: 25px;
-  padding-left: 10rem;
+  padding-left: 2rem;
 }
 
 #navBarBottom {
   position: absolute;
   width: 100%;
   height: 40px;
-  border-top: solid #2980b9 1px;
-  color: #2980b9;
+  border-top: solid #34495e 1px;
+  color: #34495e;
   bottom: 0;
 }
 
@@ -43,4 +43,100 @@
   display: inline;
   color: black;
   font-family: 'Anton', sans-serif;
+}
+
+#root {
+  position: absolute;
+  height: 550px;
+  width: 95%;
+  margin: 2rem;
+  top: 50px;
+  left: 0;
+  bottom: 100px;
+  background-color: #34495e;
+  /*background-color: black;*/
+  border-radius: .5rem;
+  overflow: scroll;
+}
+
+#book {
+  height: 300px;
+  width: 200px;
+  background-color: #2980b9;
+  margin: 4rem;
+  list-style: none;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+#sign-out {
+  right: 2rem;
+  position: absolute;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Anton', sans-serif;
+  color: white;
+}
+
+#bookInfo {
+  list-style: none;
+  display: inline-block;
+  position: absolute;
+  top: 85px;
+  left: 350px;
+}
+
+#bookViewBook {
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 200px;
+  background-color: #ecf0f1;
+  margin: 5rem;
+  list-style: none;
+  display: inline-block;
+  border-radius: 1rem;
+  position: absolute;
+}
+
+#listHeader {
+  text-align: center;
+  font-family: 'Lobster', cursive;
+}
+
+#description {
+  position: absolute;
+  top: 20rem;
+  left: 0;
+  height: 200px;
+  width: 80%;
+  background-color: #ecf0f1;
+  margin: 5rem;
+  list-style: none;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+#comments {
+  position: absolute;
+  top: 34rem;
+  left: 0;
+  height: 200px;
+  width: 80%;
+  background-color: #ecf0f1;
+  margin: 5rem;
+  list-style: none;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+h1 {
+  color: white;
+  font-family: 'Lobster', cursive;
+}
+
+#listOfBooks {
+  list-style: none;
 }
