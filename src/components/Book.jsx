@@ -1,4 +1,5 @@
 import React from 'react';
+import request from 'superagent';
 import { withRouter } from 'react-router';
 
 const propTypes = {

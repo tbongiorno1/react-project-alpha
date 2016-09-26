@@ -3,11 +3,11 @@ import { Link } from 'react-router';
 import firebase from 'firebase';
 
 const propTypes = {
-  children: React.PropTypes.element.isRequired,
+  children: React.PropTypes.element,
 };
 
 class Main extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
       loggedIn: false,
@@ -18,11 +18,12 @@ class Main extends Component {
     setTimeout(() => {
       firebase.auth().onAuthStateChanged((user) => {
         this.setState({
-            loggedIn: (user !== null),
+          loggedIn: (user !== null),
         });
       });
     }, 200);
   }
+
   signOut() {
     firebase.auth()
       .signOut()
@@ -30,6 +31,7 @@ class Main extends Component {
         console.log('user signed out');
       });
   }
+
   loggedInLinks() {
     if (!this.state.loggedIn) {
       return (

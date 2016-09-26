@@ -5,7 +5,6 @@ import Register from '../components/Register.jsx';
 import Login from '../components/Login.jsx';
 import Booklist from '../components/BookList.jsx';
 import BookView from '../components/BookView.jsx';
-import NewBook from '../components/NewBook.jsx';
 import requireAuth from '../utils/auth.js';
 
 const Routes = () => {
@@ -16,7 +15,6 @@ const Routes = () => {
         <Route path="login" component={Login} />
         <Route path="BookList" component={Booklist} onEnter={requireAuth}/>
         <Route path="BookView" component={BookView} />
-        <Route path="NewBook" component={NewBook} />
       </Route>
     </Router>
   );
