@@ -12,7 +12,6 @@ const BookView = () => {
         <li id="bookInfo">
           <h1>Title:</h1>
           <h1>Author:</h1>
-          <h1>Year:</h1>
         </li>
         <div id="description">
           <h1>Description:</h1>

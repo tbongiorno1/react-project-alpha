@@ -3,7 +3,7 @@ import request from 'superagent';
 import { withRouter } from 'react-router';
 
 const propTypes = {
-  bookImage: React.PropTypes.string,
+  data: React.PropTypes.object,
   // author: React.PropTypes.string.isRequired,
   // description: React.PropTypes.string.isRequired,
 };
@@ -17,11 +17,14 @@ class Book extends React.Component {
     this.props.router.push('/BookView');
   }
   render() {
+    const { title, authors } = this.props.data;
     return (
-      <div className="bookOnList" onClick={this.goToBookView}>
-        <div>
-          <img src={'http://i.imgur.com/p0Kfth0.jpg'} alt="boohoo" id="book"/>
+      <div className="bookOnList" >
+        <div onClick={this.goToBookView}>
+        <h1>{title} By:{authors}</h1>
+          
         </div>
+        <button onClick={this.goDeleteCover}>x</button>
       </div>
     );
   }

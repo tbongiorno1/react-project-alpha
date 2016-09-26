@@ -3,54 +3,43 @@ import { Link } from 'react-router';
 import firebase from 'firebase';
 import request from 'superagent';
 import Book from '../components/Book.jsx';
+import googleBooks from '../google.config.js';
 
 class BookList extends React.Component {
   constructor() {
     super();
     this.state = {
-      covers: [],
-      isbn: '',
+      title: '',
+      book: {},
     }
+    this.handleSearch = this.handleSearch.bind(this);
+    this.getNewBookCover = this.getNewBookCover.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
-    this.getBookCovers();
+    // this.getBookCovers();
   }
-  getBookCovers() {
-    
-  }
+
   getNewBookCover() {
-    const isbn = this.props.isbn;
-    const url = `http://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
-    request.get(url).then((response) => {
-      const coverOfBook = response.body;
-      let covers = [];
-      if (coverOfBook) {
-        covers = Object.keys(coverOfBook).map((id) => {
-          const individualCoverData = coverOfBook[id];
-          return {
-            id,
-            isbn: individualCoverData.isbn,
-            title: individualCoverData.title,
-          };
-        });
+    const { books, options } = googleBooks;
+    books.search(this.state.title, options, (err, response) => {
+      if(!err) {
+        this.setState({
+          book: response[0],
+        })
+      } else {
+        console.log(err);
       }
-      this.setState({ covers });
     });
-  }
-  goDeleteCover(isbn) {
-    const url = `http://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
-    request.del(url)
-           .then(() => {
-             this.getBookCovers();
-           });
   }
   handleSubmit(e) {
     e.preventDefault();
+    this.getNewBookCover();
   }
-  handleEditOfIsbn(e) {
-    const newIsbn = e.target.value;
+  handleSearch(e) {
+    const newTitle = e.target.value;
     this.setState({
-      isbn: newIsbn,
+      title: newTitle,
     });
   }
   render() {
@@ -58,13 +47,12 @@ class BookList extends React.Component {
       <div>
         <h1 id="listHeader">Welcome to the booklist</h1>
         <form onSubmit={this.handleSubmit}>
-          <input name="isbn" placeholder="Search by isbn #" />
-          <input type="submit" onSubmit={this.getBookCover}/>
+          <input name="title"  onChange={this.handleSearch} placeholder="Search by title" />
+          <input type="submit"/>
         </form>
         <ul id="listOfBooks">
           <li>
-          <Book />
-          <button onClick={this.goDeleteCover}>x</button>
+          <Book data={this.state.book}/>
           </li>
         </ul>
       </div>
